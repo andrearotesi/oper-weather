@@ -1,0 +1,15 @@
+@import 'variables';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica Neue, sans-serif;
+  background: var(--body-backgroud-color);
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--color-primary);
+  margin: 2em;
+  border-radius: 5px;
+}
