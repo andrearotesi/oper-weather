@@ -2,10 +2,10 @@
   <h2>{{data.city}}</h2>
   <h1><strong>{{data.temperature}}°</strong></h1>
 
-  <section *ngFor="let condition of data.conditions">
+  <ng-container *ngFor="let condition of data.conditions">
     <!-- TODO icon based on condition -->
     <span>{{condition.description}}</span>
-  </section>
+  </ng-container>
 
   <h2>H: {{data.temp_max}}° L: {{data.temp_min}}°</h2>
 </div>
