@@ -1,8 +1,8 @@
 export class TempUtils {
-  static farenheitToCelsius(farenheit: number): number {
-    if (farenheit === undefined || farenheit === null) {
+  static kelvinToCelsius(kelvin: number): number {
+    if (kelvin === undefined || kelvin === null) {
       return null;
     }
-    return Math.floor(((farenheit - 32) * 5) / 9);
+    return Math.round(kelvin - 273.15);
   }
 }
