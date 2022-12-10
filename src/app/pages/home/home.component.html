@@ -1,7 +1,7 @@
 <div class="wrapper">
   <ng-container *ngIf="currentWeather$ | async as weather">
     <app-weather-info [data]="weather"></app-weather-info>
-  </ng-container>
 
-  <strong (click)="navigateToForecast()">See four-day forecast</strong>
+    <strong (click)="navigateToForecast()">See four-day forecast</strong>
+  </ng-container>
 </div>
