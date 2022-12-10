@@ -1,0 +1,11 @@
+<div class="wrapper card">
+  <h2>{{data.city}}</h2>
+  <h1><strong>{{data.temperature}}°</strong></h1>
+
+  <section *ngFor="let condition of data.conditions">
+    <!-- TODO icon based on condition -->
+    <span>{{condition.description}}</span>
+  </section>
+
+  <h2>L: {{data.temp_min}}° H: {{data.temp_max}}°</h2>
+</div>

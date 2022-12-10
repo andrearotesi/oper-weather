@@ -1,3 +1,6 @@
 <!-- TODO show weather for current day -->
+<ng-container *ngIf="currentWeather$ | async as weather">
+  <app-weather-info [data]="weather"></app-weather-info>
+</ng-container>
 
 <!-- TODO add navigation to 4 day forecast -->
