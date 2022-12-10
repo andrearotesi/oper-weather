@@ -1,6 +1,7 @@
 @import 'variables';
 
 html, body {
+  height: 100%;
   margin: 0;
   font-family: Helvetica Neue, sans-serif;
   background: var(--body-backgroud-color);
@@ -8,7 +9,9 @@ html, body {
 }
 
 .card {
+  cursor: pointer;
   background-color: var(--color-primary);
-  margin: 2em 2em 0 2em;
+  margin: 2em;
+  padding: 1.5em 3em;
   border-radius: 5px;
 }
