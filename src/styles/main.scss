@@ -6,12 +6,25 @@ html, body {
   font-family: Helvetica Neue, sans-serif;
   background: var(--body-backgroud-color);
   color: var(--text-color);
+
+  & .center {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  & .card {
+    cursor: pointer;
+    background-color: var(--color-primary);
+    margin: 2em;
+    padding: 1.5em 3em;
+    border-radius: 5px;
+  }
+
+  & .link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--color-accent);
+  }
 }
 
-.card {
-  cursor: pointer;
-  background-color: var(--color-primary);
-  margin: 2em;
-  padding: 1.5em 3em;
-  border-radius: 5px;
-}

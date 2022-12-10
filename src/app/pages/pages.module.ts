@@ -5,6 +5,7 @@ import {HomeComponent} from "./home/home.component";
 import {ForecastComponent} from "./forecast/forecast.component";
 import {ErrorComponent} from "./error/error.component";
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -17,7 +18,8 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ]
 })
 export class PagesModule { }
