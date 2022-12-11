@@ -27,13 +27,21 @@ export class WeatherService {
 
 
   /**
-   * Fetches the weather data for the next 5 days
+   * Fetches the weather data for the next 4 days, excluding today
    */
-  getFiveDayForecast(latitude: number, longitude: number): Observable<Weather> {
+  getNextFourDaysForecast(latitude: number, longitude: number): Observable<Weather[]> {
     return this.http.get(`${WeatherService.URL}/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${WeatherService.APP_ID}`)
       .pipe(
-        map((data) => {
-          return new Weather(data);
+        map((data: any) => {
+          let response: Weather[] = [];
+          let today = new Date().getDate();
+          data.list.forEach(item => {
+            let date = new Date(item.dt_txt).getDate();
+            if (date !== today) {
+              response.push(new Weather(item));
+            }
+          });
+          return response;
         })
       );
   }
