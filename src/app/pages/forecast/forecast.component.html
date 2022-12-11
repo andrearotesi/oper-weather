@@ -1,1 +1,11 @@
-<p>forecast works!</p>
+<strong class="link" routerLink="/">back home</strong>
+
+<h1>Next four days</h1>
+
+<div *ngFor="let date of dates">
+  {{date | date}}
+  <div *ngFor="let condition of forecastByDate(date)">
+    <app-weather-info [data]="condition"></app-weather-info>
+  </div>
+</div>
+
