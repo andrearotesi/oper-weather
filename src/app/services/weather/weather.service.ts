@@ -27,9 +27,9 @@ export class WeatherService {
 
 
   /**
-   * Fetches the weather data for the next 4 days, excluding today
+   * Fetches the weather data for the next 5 days, excluding today.
    */
-  getNextFourDaysForecast(latitude: number, longitude: number): Observable<Weather[]> {
+  getNextFiveDaysForecast(latitude: number, longitude: number): Observable<Weather[]> {
     return this.http.get(`${WeatherService.URL}/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${WeatherService.APP_ID}`)
       .pipe(
         map((data: any) => {
@@ -37,7 +37,8 @@ export class WeatherService {
           let today = new Date().getDate();
           data.list.forEach(item => {
             let date = new Date(item.dt_txt).getDate();
-            if (date !== today) {
+            // Check that weather data for a given day hasn't already been added
+            if (date !== today && !response.find(resItem => resItem.date.getDate() === date)) {
               response.push(new Weather(item));
             }
           });
