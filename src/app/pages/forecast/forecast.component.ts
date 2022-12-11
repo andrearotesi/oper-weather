@@ -11,23 +11,23 @@ import {Weather} from "../../services/weather/models/weather.model";
 })
 export class ForecastComponent implements OnInit {
   forecast: Weather[] = [];
-  dates: string[] = [];
+  dates: Date[] = [];
 
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
     const location: LocationInterface = JSON.parse(localStorage.getItem(LOCATION_KEY));
-    this.weatherService.getNextFourDaysForecast(location.latitude, location.longitude)
+    this.weatherService.getNextFiveDaysForecast(location.latitude, location.longitude)
       .subscribe((res: Weather[]) => {
         this.forecast = res;
 
         // Get all unique dates
-        const resDates: string[] = res.map((item) => item.date);
+        const resDates: Date[] = res.map((item) => item.date);
         this.dates = resDates.filter((item, index) => resDates.indexOf(item) === index);
       });
   }
 
-  forecastByDate(date: string): Weather[] {
+  forecastByDate(date: Date): Weather[] {
     // Returns the weather conditions for the corresponding date
     return this.forecast.filter(cond => cond.date === date);
   }
