@@ -14,7 +14,7 @@ html, body {
   }
 
   & .card {
-    cursor: pointer;
+    cursor: default;
     background-color: var(--color-primary);
     margin: 2em;
     padding: 1.5em 3em;
