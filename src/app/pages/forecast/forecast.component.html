@@ -1,11 +1,12 @@
-<strong class="link" routerLink="/">back home</strong>
+<div>
+  <strong class="link" routerLink="/">back home</strong>
 
-<h1>Next four days</h1>
+  <h1>Next five days</h1>
 
-<div *ngFor="let date of dates">
-  {{date | date}}
-  <div *ngFor="let condition of forecastByDate(date)">
-    <app-weather-info [data]="condition"></app-weather-info>
+  <div *ngFor="let date of dates">
+    <h3>{{date | date}}</h3>
+    <div *ngFor="let condition of forecastByDate(date)">
+      <app-forecast-item [data]="condition"></app-forecast-item>
+    </div>
   </div>
 </div>
-

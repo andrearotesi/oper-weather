@@ -6,6 +6,7 @@ import {ForecastComponent} from "./forecast/forecast.component";
 import {ErrorComponent} from "./error/error.component";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
+import {ForecastItemComponent} from "./forecast/forecast-item/forecast-item.component";
 
 
 
@@ -14,7 +15,8 @@ import {RouterModule} from "@angular/router";
     HomeComponent,
     ForecastComponent,
     ErrorComponent,
-    WeatherInfoComponent
+    WeatherInfoComponent,
+    ForecastItemComponent
   ],
   imports: [
     CommonModule,
