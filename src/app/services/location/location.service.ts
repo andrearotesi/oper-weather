@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LOCATION_KEY } from 'src/app/app.const';
-import { LoadingService } from '../loading/loading.service';
 import { LocationInterface } from './models/location.interface';
 
 @Injectable({

@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LOCATION_KEY} from "./app.const";
 import { LocationService } from './services/location/location.service';
-import {LocationInterface} from "./services/location/models/location.interface";
 
 @Component({
   selector: 'app-root',

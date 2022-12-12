@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherService} from "../../services/weather/weather.service";
-import {LOCATION_KEY} from "../../app.const";
 import {Weather} from "../../services/weather/models/weather.model";
-import { LocationInterface } from 'src/app/services/location/models/location.interface';
 import { LocationService } from 'src/app/services/location/location.service';
 
 @Component({
