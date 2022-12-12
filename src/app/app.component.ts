@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LOCATION_KEY} from "./app.const";
-import {LocationInterface} from "./services/location.interface";
+import { LocationService } from './services/location/location.service';
+import {LocationInterface} from "./services/location/models/location.interface";
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,16 @@ import {LocationInterface} from "./services/location.interface";
 })
 export class AppComponent implements OnInit {
 
+  isLoading = false;
+
+  constructor(private locationService: LocationService) { }
+
   ngOnInit(): void {
     // On start, save current location on localStorage
-    let location = JSON.parse(localStorage.getItem(LOCATION_KEY));
+    let location = this.locationService.retrieve();
     if (!location) {
-      navigator.geolocation.getCurrentPosition(res => {
-        location = { latitude: res.coords.latitude, longitude: res.coords.longitude };
-        localStorage.setItem(LOCATION_KEY, JSON.stringify(location));
-      });
+      this.isLoading = true;
+      this.locationService.saveCurrentLocation().subscribe(res => this.isLoading = false);
     }
   }
 

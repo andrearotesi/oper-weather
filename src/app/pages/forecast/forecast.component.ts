@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {WeatherService} from "../../services/weather/weather.service";
 import {LOCATION_KEY} from "../../app.const";
 import {Weather} from "../../services/weather/models/weather.model";
-import { LocationInterface } from 'src/app/services/location.interface';
+import { LocationInterface } from 'src/app/services/location/models/location.interface';
+import { LocationService } from 'src/app/services/location/location.service';
 
 @Component({
   selector: 'app-forecast',
@@ -12,16 +13,17 @@ import { LocationInterface } from 'src/app/services/location.interface';
 export class ForecastComponent implements OnInit {
   forecast: Weather[] = [];
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(
+    private weatherService: WeatherService,
+    private locationService: LocationService
+  ) { }
 
   ngOnInit(): void {
-    const location: LocationInterface = JSON.parse(localStorage.getItem(LOCATION_KEY));
-    if (location) {
-      this.weatherService.getNextFiveDaysForecast(location.latitude, location.longitude)
-      .subscribe((res: Weather[]) => {
-        this.forecast = res;
-      });
-    }
+    const location = this.locationService.retrieve();
+    this.weatherService.getNextFiveDaysForecast(location.latitude, location.longitude)
+    .subscribe((res: Weather[]) => {
+      this.forecast = res;
+    });
   }
 
 }
