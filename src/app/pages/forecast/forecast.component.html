@@ -1,4 +1,4 @@
-<div class="center">
+<div class="center" *ngIf="forecast.length > 0">
   <h1>Next five days</h1>
 
   <div *ngFor="let condition of forecast">
