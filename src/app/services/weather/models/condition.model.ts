@@ -1,7 +1,5 @@
-import {ConditionEnum} from "./condition.enum";
-
 export class Condition {
-  main: ConditionEnum;
+  main: string;
   description: string;
 
   constructor(data: any | undefined) {

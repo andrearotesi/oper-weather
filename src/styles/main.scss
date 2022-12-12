@@ -21,5 +21,16 @@ html, body {
     text-decoration: underline;
     color: var(--color-accent);
   }
+
+  & .title {
+    margin: 0
+  }
+
+  & .subtitle {
+    margin-bottom: 1em;
 }
+}
+
+
+
 

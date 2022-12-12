@@ -1,4 +1,9 @@
 <div class="center text-center" *ngIf="currentWeather$ | async as weather">
+
+  <h1 class="title">Today's weather</h1>
+  <span class="subtitle">I hope it's a nice day in {{weather.city}}!</span>
+
   <app-weather-info [data]="weather"></app-weather-info>
   <strong class="link" (click)="navigateToForecast()">See five-day forecast</strong>
+  
 </div>

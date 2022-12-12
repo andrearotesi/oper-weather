@@ -13,10 +13,8 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  /**
-   * Fetches the current weather data based on the provided location
-   */
   getCurrentWeather(latitude: number, longitude: number): Observable<Weather> {
+    // Fetches the current weather data based on the provided location
     return this.http.get(`${WeatherService.URL}/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${WeatherService.APP_ID}`)
       .pipe(
         map((data) => {
@@ -26,10 +24,8 @@ export class WeatherService {
   }
 
 
-  /**
-   * Fetches the weather data for the next 5 days, excluding today.
-   */
   getNextFiveDaysForecast(latitude: number, longitude: number): Observable<Weather[]> {
+    // Fetches the weather data for the next 5 days (once per day), excluding today.
     return this.http.get(`${WeatherService.URL}/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${WeatherService.APP_ID}`)
       .pipe(
         map((data: any) => {
