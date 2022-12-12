@@ -10,7 +10,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'four-days',
+    path: 'five-days',
     component: ForecastComponent
   },
   {

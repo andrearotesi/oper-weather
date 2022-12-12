@@ -24,7 +24,7 @@ export class HomeComponent {
   }
 
   navigateToForecast(): void {
-    this.router.navigate(['four-days']);
+    this.router.navigate(['five-days']);
   }
 
 }
