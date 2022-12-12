@@ -31,13 +31,18 @@ export class WeatherService {
         map((data: any) => {
           let response: Weather[] = [];
           let today = new Date().getDate();
+          let city = data.city.name;
+
           data.list.forEach(item => {
             let date = new Date(item.dt_txt).getDate();
             // Check that weather data for a given day hasn't already been added
             if (date !== today && !response.find(resItem => resItem.date.getDate() === date)) {
-              response.push(new Weather(item));
+              let weather = new Weather(item);
+              weather.city = city;
+              response.push(weather);
             }
           });
+
           return response;
         })
       );
