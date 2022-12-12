@@ -20,10 +20,7 @@ export class ForecastComponent implements OnInit {
     this.weatherService.getNextFiveDaysForecast(location.latitude, location.longitude)
       .subscribe((res: Weather[]) => {
         this.forecast = res;
-
-        // Get all unique dates
-        const resDates: Date[] = res.map((item) => item.date);
-        this.dates = resDates.filter((item, index) => resDates.indexOf(item) === index);
+        this.dates = res.map((item) => item.date);
       });
   }
 
