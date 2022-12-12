@@ -10,5 +10,6 @@ export class WeatherInfoComponent {
 
   @Input() data: Weather;
   @Input() minimal = false;
-
+  // If true, enables minimal mode toggling on click
+  @Input() toggleMinimal = false;
 }

@@ -1,8 +1,11 @@
 <div class="center" *ngIf="forecast.length > 0">
-  <h1>Five day forecast</h1>
+
+  <h1 class="title">Five day forecast</h1>
+  <span class="subtitle">click on a day to get more info</span>
 
   <div *ngFor="let condition of forecast">
-    <app-weather-info [data]="condition" [minimal]="true"></app-weather-info>
+    <app-weather-info [data]="condition" [minimal]="true" 
+    [toggleMinimal]="true"></app-weather-info>
   </div>
 
   <strong class="link" routerLink="/">Back home</strong>

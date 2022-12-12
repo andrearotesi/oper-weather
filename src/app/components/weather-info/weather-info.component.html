@@ -1,4 +1,6 @@
-<div [ngClass]="minimal ? 'text-center minimal' : 'center'" class="card">
+<div [ngClass]="minimal ? 'text-center minimal' : 'center'" class="card"
+  (click)="toggleMinimal ? minimal = !minimal : null">
+  
   <ng-container *ngIf="minimal; else fullBlock">
     <strong>{{data.date | date}}</strong>
     <br>
