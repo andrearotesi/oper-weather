@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LOCATION_KEY} from "./app.const";
-import {LocationInterface} from "./services/weather/models/location.interface";
+import {LocationInterface} from "./services/location.interface";
 
 @Component({
   selector: 'app-root',

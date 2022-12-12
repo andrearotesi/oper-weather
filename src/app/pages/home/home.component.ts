@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {WeatherService} from "../../services/weather/weather.service";
 import {LOCATION_KEY} from "../../app.const";
-import {LocationInterface} from "../../services/weather/models/location.interface";
 import {Weather} from "../../services/weather/models/weather.model";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
+import { LocationInterface } from 'src/app/services/location.interface';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +20,9 @@ export class HomeComponent {
     private router: Router
   ) {
     const location: LocationInterface = JSON.parse(localStorage.getItem(LOCATION_KEY));
-    this.currentWeather$ = this.weatherService.getCurrentWeather(location.latitude, location.longitude);
+    if (location) {
+      this.currentWeather$ = this.weatherService.getCurrentWeather(location.latitude, location.longitude);
+    }
   }
 
   navigateToForecast(): void {
