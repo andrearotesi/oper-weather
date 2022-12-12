@@ -1,18 +1,19 @@
-<div [ngClass]="handleNgClass()" 
-  class="card" (click)="toggleMinimal ? minimal = !minimal : null">
+<div [ngClass]="handleNgClass()" class="card" 
+  (click)="toggleMinimal ? minimal = !minimal : null">
 
+  <!-- (minimal only) date & temps -->
   <ng-container *ngIf="minimal; else fullBlock">
     <strong>{{data.date | date}}</strong>
     <br>
     <span>AVG: {{data.temperature}}° H: {{data.temp_max}}° L: {{data.temp_min}}°</span>
   </ng-container>
 
+  <!-- (non minimal only) full data -->
   <ng-template #fullBlock>
     <h2>{{data.city}}</h2>
     <h1><strong class="huge">{{data.temperature}}°</strong></h1>
 
     <ng-container *ngFor="let condition of data.conditions">
-      <!-- TODO icon based on condition -->
       <span>{{condition.description}}</span>
     </ng-container>
 
