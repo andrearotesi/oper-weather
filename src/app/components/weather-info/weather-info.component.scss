@@ -9,6 +9,7 @@
     margin: .5em;
     width: 500px;
     @media(width < 600px) {
+      min-width: 200px;
       width: auto;
     }
   }

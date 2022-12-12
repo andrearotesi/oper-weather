@@ -1,8 +1,9 @@
 <div class="center">
-  <strong class="link" routerLink="/">Back home</strong>
   <h1>Next five days</h1>
 
   <div *ngFor="let condition of forecast">
     <app-weather-info [data]="condition" [minimal]="true"></app-weather-info>
   </div>
+
+  <strong class="link" routerLink="/">Back home</strong>
 </div>
