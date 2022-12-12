@@ -1,13 +1,27 @@
-div {
-  & h1 {
-    margin: 0;
-  }
+.card {
+  cursor: default;
+  background-color: var(--color-primary);
+  margin: 2em;
+  padding: 1.5em 3em;
+  border-radius: 5px;
 
-  & h2 {
-    margin: 5px;
+  &.minimal {
+    margin: .5em;
+    width: 500px;
+    @media(width < 600px) {
+      width: auto;
+    }
   }
+}
 
-  & strong {
-    font-size: 3em;
-  }
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 5px;
+}
+
+.huge {
+  font-size: 3em;
 }

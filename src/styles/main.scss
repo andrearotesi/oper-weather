@@ -16,14 +16,6 @@ html, body {
     text-align: center;
   }
 
-  & .card {
-    cursor: default;
-    background-color: var(--color-primary);
-    margin: 2em;
-    padding: 1.5em 3em;
-    border-radius: 5px;
-  }
-
   & .link {
     cursor: pointer;
     text-decoration: underline;

@@ -9,5 +9,6 @@ import {Weather} from "../../services/weather/models/weather.model";
 export class WeatherInfoComponent {
 
   @Input() data: Weather;
+  @Input() minimal = false;
 
 }

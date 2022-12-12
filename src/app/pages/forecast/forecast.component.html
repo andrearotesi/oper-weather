@@ -3,6 +3,6 @@
   <h1>Next five days</h1>
 
   <div *ngFor="let condition of forecast">
-    <app-forecast-item [data]="condition"></app-forecast-item>
+    <app-weather-info [data]="condition" [minimal]="true"></app-weather-info>
   </div>
 </div>

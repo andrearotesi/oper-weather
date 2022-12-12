@@ -1,11 +1,19 @@
-<div class="center card">
-  <h2>{{data.city}}</h2>
-  <h1><strong>{{data.temperature}}°</strong></h1>
-
-  <ng-container *ngFor="let condition of data.conditions">
-    <!-- TODO icon based on condition -->
-    <span>{{condition.description}}</span>
+<div [ngClass]="minimal ? 'text-center minimal' : 'center'" class="card">
+  <ng-container *ngIf="minimal; else fullBlock">
+    <strong>{{data.date | date}}</strong>
+    <br>
+    <span>AVG: {{data.temperature}}° H: {{data.temp_max}}° L: {{data.temp_min}}°</span>
   </ng-container>
 
-  <h2>H: {{data.temp_max}}° L: {{data.temp_min}}°</h2>
+  <ng-template #fullBlock>
+    <h2>{{data.city}}</h2>
+    <h1><strong class="huge">{{data.temperature}}°</strong></h1>
+
+    <ng-container *ngFor="let condition of data.conditions">
+      <!-- TODO icon based on condition -->
+      <span>{{condition.description}}</span>
+    </ng-container>
+
+    <h2>H: {{data.temp_max}}° L: {{data.temp_min}}°</h2>
+  </ng-template>
 </div>
