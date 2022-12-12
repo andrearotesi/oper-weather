@@ -1,6 +1,6 @@
-<div [ngClass]="minimal ? 'text-center minimal' : 'center'" class="card"
-  (click)="toggleMinimal ? minimal = !minimal : null">
-  
+<div [ngClass]="handleNgClass()" 
+  class="card" (click)="toggleMinimal ? minimal = !minimal : null">
+
   <ng-container *ngIf="minimal; else fullBlock">
     <strong>{{data.date | date}}</strong>
     <br>
@@ -18,4 +18,5 @@
 
     <h2>H: {{data.temp_max}}° L: {{data.temp_min}}°</h2>
   </ng-template>
+  
 </div>
