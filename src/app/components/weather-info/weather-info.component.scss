@@ -4,14 +4,15 @@
   margin: 2em;
   padding: 1.5em 3em;
   border-radius: 5px;
-
+  width: 500px;
+  
   &.minimal {
     margin: .5em;
-    width: 500px;
-    @media(width < 600px) {
-      min-width: 200px;
-      width: auto;
-    }
+  }
+
+  @media(width < 600px) {
+    min-width: 200px;
+    width: auto;
   }
 }
 

@@ -1,5 +1,5 @@
 <div class="center" *ngIf="forecast.length > 0">
-  <h1>Next five days</h1>
+  <h1>Five day forecast</h1>
 
   <div *ngFor="let condition of forecast">
     <app-weather-info [data]="condition" [minimal]="true"></app-weather-info>
