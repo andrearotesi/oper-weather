@@ -11,7 +11,6 @@ import {Weather} from "../../services/weather/models/weather.model";
 })
 export class ForecastComponent implements OnInit {
   forecast: Weather[] = [];
-  dates: Date[] = [];
 
   constructor(private weatherService: WeatherService) {}
 
@@ -20,13 +19,7 @@ export class ForecastComponent implements OnInit {
     this.weatherService.getNextFiveDaysForecast(location.latitude, location.longitude)
       .subscribe((res: Weather[]) => {
         this.forecast = res;
-        this.dates = res.map((item) => item.date);
       });
-  }
-
-  forecastByDate(date: Date): Weather[] {
-    // Returns the weather conditions for the corresponding date
-    return this.forecast.filter(cond => cond.date === date);
   }
 
 }

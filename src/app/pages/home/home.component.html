@@ -1,6 +1,4 @@
-<div class="center">
-  <ng-container *ngIf="currentWeather$ | async as weather">
-    <app-weather-info [data]="weather"></app-weather-info>
-    <strong class="link" (click)="navigateToForecast()">See five-day forecast</strong>
-  </ng-container>
+<div class="center text-center" *ngIf="currentWeather$ | async as weather">
+  <app-weather-info [data]="weather"></app-weather-info>
+  <strong class="link" (click)="navigateToForecast()">See five-day forecast</strong>
 </div>

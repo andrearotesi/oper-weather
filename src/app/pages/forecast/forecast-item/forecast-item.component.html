@@ -1,4 +1,6 @@
-<div>
+<div class="card text-center">
+  <strong>{{data.date | date}}</strong>
+  <br>
   <span>AVG: {{data.temperature}}° H: {{data.temp_max}}° L: {{data.temp_min}}°</span>
   -
   <ng-container *ngFor="let condition of data.conditions">
