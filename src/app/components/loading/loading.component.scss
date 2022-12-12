@@ -5,7 +5,18 @@
     z-index: 9999;
     transform: translate(-50%, -50%);
 
-    & h1 {
+    & img {
         position: relative;
+        width: 100px;
+        animation: rotation 2s infinite linear;
     }
 }
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
