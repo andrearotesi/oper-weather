@@ -3,7 +3,7 @@
 
   <!-- (minimal only) date & temps -->
   <ng-container *ngIf="minimal; else fullBlock">
-    <strong>{{data.date | date}}</strong>
+    <strong>{{data.date | date:'MMM d'}}</strong>
     <br>
     <span>AVG: {{data.temperature}}° H: {{data.temp_max}}° L: {{data.temp_min}}°</span>
   </ng-container>
@@ -11,7 +11,7 @@
   <!-- (non minimal only) full data -->
   <ng-template #fullBlock>
     <h2>{{data.city}}</h2>
-    <span>{{data.date | date}}</span>
+    <span>{{data.date | date:'EEEE, MMMM d'}}</span>
     <h1><strong class="huge">{{data.temperature}}°</strong></h1>
 
     <ng-container *ngFor="let condition of data.conditions">
