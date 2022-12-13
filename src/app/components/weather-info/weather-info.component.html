@@ -11,6 +11,7 @@
   <!-- (non minimal only) full data -->
   <ng-template #fullBlock>
     <h2>{{data.city}}</h2>
+    <span>{{data.date | date}}</span>
     <h1><strong class="huge">{{data.temperature}}°</strong></h1>
 
     <ng-container *ngFor="let condition of data.conditions">
